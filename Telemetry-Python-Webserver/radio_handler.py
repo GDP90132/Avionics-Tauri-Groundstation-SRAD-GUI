@@ -212,11 +212,7 @@ async def radio_handler(websocket):
                     
                 
                 if "------------------------------------------------" in str_line and not (len(packet) == 0):
-                    if (len(packet) == 14): #ONLY ACCEPT IF THE       
-                        full_packet_recieved = True
-                    else:
-                        print ("INFO: IRREGULAR PACKET LENGTH FOUND (NOT 14 LINES); REJECTING PACKET; DELETING PACKET, WILL TRY AGAIN", flush = True)
-                        packet = []
+                    full_packet_recieved = True
 
                 #ignore if it is the very first shit
                 elif "------------------------------------------------" in str_line and (len(packet) == 0):
